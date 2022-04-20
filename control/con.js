@@ -2,6 +2,18 @@ const req = require("express/lib/request");
 const res = require("express/lib/response");
 const user = require("../model/mod");
 
+const getAll = async (req, res, next) =>{
+    let User;
+    try{
+        User = await user.find();
+    }catch (err){
+        console.log(err);
+    }
+    if(!User){
+        return res.status(404).json({message:"NO users found ."});
+    }
+    return res.status(200).json({User});
+}
 const addUser = async (req, res, next) => {
     const {name, email, password} = req.body;
     let User
@@ -11,7 +23,7 @@ const addUser = async (req, res, next) => {
             email,
             password
         });
-        await user.save();
+        await User.save();
     }catch(err){
         console.log(err);
     }
@@ -21,10 +33,10 @@ const addUser = async (req, res, next) => {
     return res.status(200).json({User});
 };
 const getUserInfo = async (req, res,next) => {
-    const name = req.params.name;
+    const id = req.params.id;
     let User;
     try{
-        user = await User.findByNAME(name);
+        User = await user.findByNAME(id);
     }catch(err){
         console.log(err);
     }
@@ -34,15 +46,15 @@ const getUserInfo = async (req, res,next) => {
     return res.status(200).json({User});
 };
 const deleteUser = async (req, res, next) => {
-    const name = req.params.name;
+    const id = req.params.id;
     let User;
     try{
-        user = await User.findByIDAndDelete(name);
+        User = await user.findByIdAndDelete(id);
     }catch(err){
         console.log(err);
     }
     if(!User){
-        return res.status(404).json({message:"Can not delete user"});
+        return res.status(404).json({message:"---jtyy-g-jy"});
     }
     return res.status(200).json({User});
 };
@@ -56,7 +68,7 @@ const updateUser = async (req, res, next) => {
             email,
             password
         });
-        User = await user.save();
+        await User.save();
     }catch(err){
         console.log(err);
     }
@@ -65,7 +77,7 @@ const updateUser = async (req, res, next) => {
     }
     return res.status(200).json({User});
 };
-
+exports.getAll= getAll;
 exports.addUser = addUser;
 exports.updateUser = updateUser;
 exports.deleteUser = deleteUser;
