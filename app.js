@@ -8,5 +8,5 @@ mongoose
 .connect("mongodb+srv://user:1q2w3e4r@cluster0.uhv3n.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
 .then(()=>console.log("connected to MongoDB"))
 .then(()=>{
-app.listen(9000);
+app.listen(5000);
 }).catch((err)=>console.log(err));
