@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start" : "nodemon app.js"
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,7 @@
   "homepage": "https://github.com/Eyad-Alqaysi/login-page-using-node-js-and-mangodb#readme",
   "dependencies": {
     "express": "^4.17.3",
-    "mongose": "^0.0.2-security",
+    "mongoose": "^6.3.0",
     "nodemon": "^2.0.15"
   }
 }
