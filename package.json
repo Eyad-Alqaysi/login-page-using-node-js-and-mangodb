@@ -1,0 +1,24 @@
+{
+  "name": "login-page-using-node-js-and-mangodb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start" : "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eyad-Alqaysi/login-page-using-node-js-and-mangodb.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eyad-Alqaysi/login-page-using-node-js-and-mangodb/issues"
+  },
+  "homepage": "https://github.com/Eyad-Alqaysi/login-page-using-node-js-and-mangodb#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "mongose": "^0.0.2-security",
+    "nodemon": "^2.0.15"
+  }
+}
